@@ -31,6 +31,9 @@
         * {margin: 0; padding: 0;}
         html {overflow: hidden;}
         body {font-family: 'Poppins', sans-serif;}
+
+        .nowrap {white-space: nowrap;}
+
         div {width: 100%; height: 100%;}
         div.full {width: 100vw; height: 100vh; overflow: hidden;}
         div.logos {opacity: .3; 
@@ -81,6 +84,7 @@
                 text-align: center;
             }
         }
+        
 
     </style>
 </head>
@@ -89,7 +93,7 @@
         <div class="front">
             <img src="logo.svg" id="logo">
             <section>
-                <h3>Portifólio de Gabriel Borges</h3>
+                <h3>Portifólio de <span class="nowrap">Gabriel Borges</span></h3>
                 <h3>Em desenvolvimento...</h3>
             </section>
         </div>
