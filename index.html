@@ -1,104 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Portifólio de Gabriel Borges</title>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portifólio pessoal">
-    <meta name="keywords" content="Personal, Portfolio">
+    
+    <meta name="description" content="Tenha acesso a minha lista completa com mais de 200 palavras-chave negativas!">
+    <meta name="keywords" content="Google Ads, E-book">
+    <meta name="author" content="Maicon Borges">
+    <meta name="theme-color" content="#0d2140">
 
     <!--  Essential META Tags -->
-    <meta property="og:title" content="Portifólio de Gabriel Borges">
+    <meta property="og:title" content="Maicon Borges">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="thumbnail.png">
-    <meta property="og:url" content="https://gabriel-portfolio.github.io">
+    <meta property="og:image" content="">
+    <meta property="og:url" content="">
 
-    <meta name="twitter:title" content="Portifólio de Gabriel Borges">
-    <meta name="twitter:description" content="Portifólio pessoal">
-    <meta name="twitter:image" content="thumbnail.png">
-    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Maicon Borges">
+    <meta name="twitter:description" content="Tenha acesso a minha lista completa com mais de 200 palavras-chave negativas!">
+    <meta name="twitter:image" content="">
+    <meta name="twitter:card" content="summary">
 
     <!--  Non-Essential, But Recommended -->
-    <meta property="og:description" content="Portifólio pessoal">
-    <meta property="og:site_name" content="Portifólio de Gabriel Borges">
-    <meta name="twitter:image:alt" content="Portifólio de Gabriel Borges Cover">
-    <link rel="shortcut icon" href="logo.svg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <meta property="og:description" content="Tenha acesso a minha lista completa com mais de 200 palavras-chave negativas!">
+    <meta property="og:site_name" content="Maicon Borges">
+    <meta name="twitter:image:alt" content="Capa Maicon Borges">
+
+    <link
+        href="favicon-light.svg"
+        rel="icon"
+        media="(prefers-color-scheme: light)"
+    />
+    <link
+        href="favicon-dark.svg"
+        rel="icon"
+        media="(prefers-color-scheme: dark)"
+    />
+
+    <title>Gabriel Borges</title>
+
     <style>
-        * {margin: 0; padding: 0;}
-        html {overflow: hidden;}
-        body {font-family: 'Poppins', sans-serif;}
-
-        .nowrap {white-space: nowrap;}
-
-        div {width: 100%; height: 100%;}
-        div.full {width: 100vw; height: 100vh; overflow: hidden;}
-        div.logos {opacity: .3; 
-            background-image: url(logo-outline.png); 
-            background-size: 96px; 
-            transform: 
-                rotate(-10deg) 
-                scale(1.5);
-            animation: slide 3s infinite linear; 
+        * {
+            margin: 0;
+            padding: 0;
         }
-        div.gradient {
-            position: absolute;
-            background: linear-gradient(#fff, #fff0, #fff);;
-            z-index: 1;
-        }
-        div.front {
-            position: absolute;
-            z-index: 2;
-            display: flex;
-            /* flex-direction: column; */
-            align-items: center;
+        body {
+            overflow: hidden;
+            height: 100dvh;
+            /* display: flex;
             justify-content: center;
-            gap: 2em;
-            text-transform: uppercase;
+            align-items: center; */
         }
-        img#logo {
-            width: 128px;
+        .bg {
+            width: calc(100vw * 1.3);
+            aspect-ratio: 1;
+            background-image: url('fibonacci.svg');
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-position: center center;
+            
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%);
+
+            transform-origin: 0 0;
+            
+            animation: rotate 12s linear infinite reverse;
+
+            z-index: -1;
         }
-        h3 {
-            font-size: 1.5rem;
-            font-weight: 300;
+        .bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(#fff, #fff0);
+            
         }
-        
-        @keyframes slide {
+
+        .content {
+            width: 100vw; height: 100dvh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo {
+            width: min(360px, 100%);
+            fill: none;
+            stroke: #222;
+            stroke-width: 32px;
+            margin: 0 32px;
+        }
+
+        svg#gabriel :is(path, line) {
+            stroke-dasharray: 602;
+            /*   stroke-dashoffset: 602; */
+            
+            animation: logoAppear 1s ease forwards;
+        }
+        svg#gabriel #inverse {
+            animation-name: logoAppearInverse !important;
+        }
+
+        @keyframes rotate {
+            from { rotate: 0deg;   }
+            to   { rotate: 360deg; }
+            
+        }
+
+        @keyframes logoAppear {
             from {
-                background-position-x: 0px;
+                stroke-dashoffset: -602;
             }
             to {
-                background-position-x: 96px;
+                stroke-dashoffset: 0;
             }
         }
-
-        @media only screen and (max-width: 600px) {
-            div.front {
-                flex-direction: column;
+        @keyframes logoAppearInverse {
+            from {
+                stroke-dashoffset: 602;
             }
-            h3 {
-                text-align: center;
+            to {
+                stroke-dashoffset: 0;
             }
         }
-        
-
     </style>
 </head>
 <body>
-    <div class="full">
-        <div class="front">
-            <img src="logo.svg" id="logo">
-            <section>
-                <h3>Portifólio de <span class="nowrap">Gabriel Borges</span></h3>
-                <h3>Em desenvolvimento...</h3>
-            </section>
+    <div class="bg"></div>
+    <div class="content">
+        <div class="logo">
+            <svg id="gabriel" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1002 288">
+                <path
+                    d="m112,208h0c0-17.67,14.33-32,32-32h0c17.67,0,32,14.33,32,32h0c0,35.35-28.65,64-64,64h0c-53.02,0-96-42.98-96-96h0c0-88.37,71.63-160,160-160h0"/>
+                <path d="m386,288v-96c0-44.18-35.82-80-80-80h0c-44.18,0-80,35.82-80,80h0c0,44.18,35.82,80,80,80"/>
+                <path d="m936,192c0-44.18-35.82-80-80-80h0c-44.18,0-80,35.82-80,80h0c0,44.18,35.82,80,80,80"/>
+                <path id="inverse" d="m436,0v192c0,44.18,35.82,80,80,80h0c44.18,0,80-35.82,80-80h0c0-44.18-35.82-80-80-80"/>
+                <line id="inverse" x1="726" y1="288" x2="726" y2="96"/>
+                <line x1="986" y1="288" x2="986" y2="0"/>
+                <path d="m742,16h-16c-44.18,0-80,35.82-80,80v192"/>
+            </svg>
         </div>
-        <div class="gradient"></div>
-        <div class="logos"></div>
     </div>
 </body>
 </html>
