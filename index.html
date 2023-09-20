@@ -38,6 +38,8 @@
 
     <title>Gabriel Borges</title>
 
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
     <style>
         * {
             margin: 0;
@@ -131,6 +133,12 @@
             }
         }
     </style>
+    <script defer>
+        let clientWidth = document.body.clientWidth;
+        if ( navigator.userAgent.match(/safari/i) ) {
+            $('svg#gabriel :is(path, line)').css('animation-direction', 'reversed');
+        }
+    </script>
 </head>
 <body>
     <div class="page">
