@@ -135,7 +135,7 @@
     </style>
     <script defer>
         let clientWidth = document.body.clientWidth;
-        if ( navigator.userAgent.match(/safari/i) ) {
+        if ( navigator.userAgent.match(/safari/i) && clientWidth <= 768 ) {
             $('svg#gabriel :is(path, line)').css('animation-direction', 'reversed');
         }
     </script>
